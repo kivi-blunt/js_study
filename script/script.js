@@ -1,10 +1,28 @@
-let money = 100; //любое число “Доход за месяц”, 
+let money = prompt('Ваш месячный доход?'); //Спрашиваем у пользователя
 let income = 'Фриланс'; //строка с дополнительными доходом 
-let addExpenses = 'Такси, интернет'; //строка дополнительных расходов 
-let deposit = true; // любое булево значение
+let addExpenses = prompt ('Перечислите возможные расходы за рассчитываемый период через запятую'); //строка дополнительных расходов 
+let deposit = confirm('Есть ли у вас депозит в банке?'); // любое булево значение
+let expenses1 = prompt ('Введите обязателььную стать расходов');
+let amount1 = +prompt('Во сколько это обойдется?');
+let expenses2 = prompt ('Введите обязателььную стать расходов');
+let amount2 = +prompt('Во сколько это обойдется?');
 let mission = 1000; //любое число
 let period = 1; //число от 1 до 12 (месяцев) 
-let budgetDay = 1000; //дневной бюджет
+let DayAmount = 30;
+let budgetMonth = amount1+amount2;
+let budgetDay = budgetMonth/DayAmount; //дневной бюджет
+
+console.log(Math.ceil(mission/budgetMonth));
+console.log(Math.floor(budgetDay));
+
+if(budgetDay<0) console.log('Что то пошло не так');
+if (budgetDay>=1200) 
+    console.log('У вас высокий уровень дохода');
+else if (budgetDay>=600) 
+    console.log('У вас Средний уровень дохода');
+else if (budgetDay>=0) 
+    console.log('У вас низкий уровень дохода');
+
 
 console.log(typeof(money));
 console.log(typeof(income));
