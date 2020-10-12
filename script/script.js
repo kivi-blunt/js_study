@@ -9,19 +9,10 @@ let amount2 = +prompt('Во сколько это обойдется?');
 let mission = 1000; //любое число
 let period = 1; //число от 1 до 12 (месяцев) 
 let DayAmount = 30;
-let budgetMonth = amount1+amount2;
+let budgetMonth = money-(amount1+amount2);
 let budgetDay = budgetMonth/DayAmount; //дневной бюджет
 
-console.log(Math.ceil(mission/budgetMonth));
-console.log(Math.floor(budgetDay));
 
-if(budgetDay<0) console.log('Что то пошло не так');
-if (budgetDay>=1200) 
-    console.log('У вас высокий уровень дохода');
-else if (budgetDay>=600) 
-    console.log('У вас Средний уровень дохода');
-else if (budgetDay>=0) 
-    console.log('У вас низкий уровень дохода');
 
 
 console.log(typeof(money));
@@ -35,4 +26,15 @@ console.log("Цель зарабоать " + mission + " рублей/долла
 
 
 console.log(addExpenses.toLowerCase().split(","));
-console.log(budgetDay);
+
+console.log('Бюджет на месяц:'+ budgetMonth);
+console.log('Цель будет достигнута за:' + Math.ceil(mission/budgetMonth)+ 'месяцев');
+console.log('Бюджет на день:'+  Math.floor(budgetDay));
+
+if(budgetDay<0) console.log('Что то пошло не так');
+if (budgetDay>=1200) 
+    console.log('У вас высокий уровень дохода');
+else if (budgetDay>=600) 
+    console.log('У вас Средний уровень дохода');
+else if (budgetDay>=0) 
+    console.log('У вас низкий уровень дохода');
