@@ -1,31 +1,27 @@
-let lang = (prompt('Введите ru или en'));
-let ruDays = ['Понедельник, вторник, среда, четверг, пытница, суббота, воскресенье'];
-let enDays = ['Monday, tuesday, wednesday, thurcday, saturday, sunday'];
-if (lang === "ru"){
-    console.log(ruDays);
-    
+
+let arr = [];
+let newArr = [];
+for(let i=0; i<7;i++)
+{
+    arr[i]=prompt('Введите многозначное число');
+  if ((arr[i].toString()[0])==='2'||(arr[i].toString()[0])==='4')
+    {
+        newArr.push(arr[i]);
     }
-else if (lang==="en") {
-    console.log(enDays);
-    
 }
 
-switch(lang){
-    case "ru":
-        console.log(ruDays);
-    break;
-    case "en":
-        console.log(enDays);
-    break;
-    default:
-        console.log('ошибка');
+function isPrime (n) {
+    for (let j=2; j<n; j++){
+         if(n%j == 0) {
+         return false;
+        }
+    }
+        return n>1;
+     
 }
-let newMass =[ ['ru',ruDays],['en', enDays]];
-
-lang===newMass[0][0]?console.log(newMass[0][1]):console.log(newMass[1][1]);
-
-let namePerson = (prompt('Введите имя'));;
-
-namePerson ==="Артем" ? console.log('директор') : namePerson ==="Максим" ? console.log('преподаватель'): console.log('студент');
 
 
+ for (let i=2; i<100; i++) {
+     if (isPrime(i))
+     console.log(i + ': Делители этого числа: 1 и ' + i);
+ }
